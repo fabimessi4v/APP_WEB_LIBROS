@@ -1,7 +1,11 @@
 import express from "express";
 import { MongoClient, ObjectId, ServerApiVersion } from "mongodb"; // Replacing require with import
-
+import cors from 'cors';
 const app = express();
+
+// Permitir solicitudes desde cualquier origen (o especificar el origen)
+app.use(cors());
+
 const port = 3000;
 
 app.get('/', (req, res) => {
